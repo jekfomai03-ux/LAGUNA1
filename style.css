@@ -1,0 +1,528 @@
+/* Все стили без изменений */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #ffffff;
+            line-height: 1.6;
+            background-color: #faf8f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header__logo {
+            display: flex;
+            align-items: center;
+        }
+        .header__logo img{
+            width: 120px;
+            height: 80px;
+            border-radius: 5px;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #b98b7a;
+        }
+        .btn-online {
+            background-color: #d63b3b;
+            color: #fff;
+            padding: 10px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-online:hover {
+            background-color: #b62f2f;
+        }
+
+        /* Пульсирующая красная кнопка "Записаться онлайн" */
+        .btn-online-pulse {
+            background-color: #d63b3b;
+            color: #fff;
+            padding: 10px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 0 0 0 rgba(214, 59, 59, 0.7);
+            animation: pulse 1.5s infinite;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-online-pulse:hover {
+            animation-play-state: paused;
+            box-shadow: 0 0 15px rgba(214, 59, 59, 0.7);
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(214, 59, 59, 0.7);
+            }
+            70% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 15px rgba(214, 59, 59, 0);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(214, 59, 59, 0);
+            }
+        }
+        section {
+            padding: 70px 0;
+            background-color: #ffffff;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            font-weight: 600;
+            color: #4a3b32;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            color: #e4bfbf;
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: #d4b2a3;
+            margin: 20px auto 0;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .service-card {
+            background-color: #fff;
+            border-radius: 20px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #f0e4dd;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(185, 139, 122, 0.1);
+        }
+        .service-icon {
+            font-size: 48px;
+            color: #e85858;
+            margin-bottom: 15px;
+        }
+        .service-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #4a3b32;
+        }
+        .service-card p {
+            color: #6b5a50;
+            margin-bottom: 20px;
+        }
+        .price {
+            font-weight: 700;
+            color: #d63b3b;
+            font-size: 20px;
+        }
+        .masters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .master-card {
+            background-color: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+            transition: transform 0.3s;
+            text-align: center;
+            border: 1px solid #f0e4dd;
+        }
+        .master-card:hover {
+            transform: translateY(-5px);
+        }
+        .master-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        .master-info {
+            padding: 20px;
+        }
+        .master-info h3 {
+            font-size: 20px;
+            margin-bottom: 5px;
+            color: #4a3b32;
+        }
+        .master-info .position {
+            color: #b98b7a;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        .master-info p {
+            color: #6b5a50;
+            font-size: 14px;
+        }
+        .interior-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .interior-item {
+            border-radius: 20px;
+            overflow: hidden;
+            height: 250px;
+        }
+        .interior-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .interior-item:hover img {
+            transform: scale(1.05);
+        }
+        .brides-block {
+            background: radial-gradient(circle at top left, #fff5f5 0%, #ffecef 40%, #f9f0ea 70%, #fdf7f4 100%);
+            border-radius: 40px;
+            padding: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+        .brides-content {
+            flex: 1 1 400px;
+        }
+        .brides-content h3 {
+            font-size: 32px;
+            color: #4a3b32;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        .brides-content ul {
+            list-style: none;
+            margin: 20px 0;
+        }
+        .brides-content li {
+            color: black;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .brides-content li i {
+            color: #d97575;
+            font-size: 18px;
+        }
+        .brides-image {
+            flex: 1 1 300px;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+        }
+        .brides-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            align-items: stretch;
+        }
+        .product-card {
+            background-color: #fff;
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #f0e4dd;
+            transition: box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .product-card:hover {
+            box-shadow: 0 10px 25px rgba(185, 139, 122, 0.15);
+        }
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 15px;
+        }
+        .product-card h4 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #4a3b32;
+        }
+        .product-price {
+            font-weight: 700;
+            color: #d63b3b;
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .btn-buy {
+            display: inline-flex;
+            align-self: center;
+            background-color: #d63b3b;
+            color: #fff;
+            padding: 8px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s;
+            margin-top: auto; /* прижимаем кнопку вниз карточки */
+        }
+        .btn-buy:hover {
+            background-color: #b62f2f;
+        }
+        footer {
+            background-color: #3f332c;
+            color: #f0e4dd;
+            padding: 40px 0;
+            text-align: center;
+        }
+        .footer-links a {
+            color: #f0e4dd;
+            margin: 0 15px;
+            font-size: 24px;
+            transition: color 0.3s;
+        }
+        .footer-links a:hover {
+            color: #b98b7a;
+        }
+        .footer-online {
+            margin: 25px 0 15px;
+        }
+        .btn-footer {
+            background-color: #d63b3b;
+            color: #fff;
+            padding: 12px 35px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+        .btn-footer:hover {
+            background-color: #b62f2f;
+        }
+        .copyright {
+            font-size: 14px;
+            margin-top: 20px;
+            opacity: 0.8;
+        }
+
+        /* Модальное окно покупки + QR оплаты */
+        .buy-modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.55);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            padding: 18px;
+        }
+        .buy-modal-overlay.is-open {
+            display: flex;
+        }
+        .buy-modal {
+            width: 100%;
+            max-width: 760px;
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 18px 18px 20px;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.25);
+        }
+        .buy-modal-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 12px;
+        }
+        .buy-modal-title {
+            margin: 0;
+            font-size: 22px;
+            font-weight: 700;
+            color: #4a3b32;
+        }
+        .buy-modal-subtitle {
+            margin-top: 6px;
+            font-size: 14px;
+            color: #6b5a50;
+        }
+        .buy-modal-close {
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            color: #4a3b32;
+            font-size: 30px;
+            line-height: 1;
+            padding: 0 8px;
+        }
+        .buy-modal-body {
+            margin-top: 10px;
+        }
+        .buy-form-step.is-active,
+        .buy-qr-step.is-active {
+            display: block;
+        }
+        .buy-form-step,
+        .buy-qr-step {
+            display: none;
+        }
+        .buy-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 6px;
+        }
+        .buy-field {
+            display: grid;
+            gap: 6px;
+        }
+        .buy-field.full {
+            grid-column: 1 / -1;
+        }
+        .buy-label {
+            font-size: 13px;
+            color: #4a3b32;
+            font-weight: 700;
+        }
+        .buy-input, .buy-textarea {
+            border: 1px solid #f0e4dd;
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 10px 12px;
+            outline: none;
+            font-family: inherit;
+            font-size: 14px;
+        }
+        .buy-textarea {
+            min-height: 92px;
+            resize: vertical;
+        }
+        .buy-modal-actions {
+            grid-column: 1 / -1;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 12px;
+            margin-top: 4px;
+        }
+
+        /* QR-код в шаге оформления (после комментария) */
+        .buy-qr-inline {
+            grid-column: 1 / -1;
+            display: flex;
+            justify-content: center;
+            margin-top: 6px;
+        }
+        .buy-qr-inline img {
+            width: 180px;
+            height: 180px;
+            object-fit: contain;
+            background: #fff;
+            border: 1px solid #f0e4dd;
+            border-radius: 16px;
+        }
+        .buy-btn-ghost {
+            background: #fff;
+            color: #4a3b32;
+            border: 1px solid #f0e4dd;
+            padding: 10px 18px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .buy-btn-ghost:hover {
+            background: #fdf7f4;
+        }
+        .buy-error {
+            margin-top: 10px;
+            padding: 10px 12px;
+            border-radius: 12px;
+            background: #ffecec;
+            color: #b62f2f;
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .buy-qr-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 10px 6px;
+        }
+        .buy-qr-subtitle {
+            text-align: center;
+            font-size: 14px;
+            color: #6b5a50;
+        }
+        #buyQrCanvas {
+            width: 260px;
+            height: 260px;
+            background: #fff;
+            border-radius: 16px;
+            border: 1px solid #f0e4dd;
+        }
+        #buyQrImage {
+            width: 260px;
+            height: 260px;
+            object-fit: contain;
+            background: #fff;
+            border-radius: 16px;
+            border: 1px solid #f0e4dd;
+            display: none;
+        }
+        .buy-payment-link {
+            margin-top: 2px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+        .buy-loading {
+            opacity: 0.7;
+        }
+
+        .buy-modal-actions .btn-buy {
+            margin-top: 0 !important;
+            align-self: auto !important;
+        }
+        @media (max-width: 768px) {
+            .section-title { font-size: 28px; }
+            .brides-block { padding: 30px; }
+            .header-inner { flex-direction: column; gap: 15px; }
+        }
